@@ -1,0 +1,48 @@
+.app{
+    background-color: #afd4c0
+}
+
+.container{
+    display: flex;
+    width: 50%;
+    height: 90vh;
+    background-color: #f6f0f0;
+    /* justify-content: center; */
+    /* text-align: center; */
+    margin-left: 25%;
+    
+}
+
+.anl{
+    width: 100px;
+    font-size: 25px;
+    margin-left: 20px;
+    font-weight: bold;
+    
+}
+
+.anl-div{
+    margin-top: 20px;
+    /* justify-content: center;
+    align-items: center; */
+    
+}
+
+.cancel{
+    width: 70px;
+    height: 30px;
+    margin-left: 400px;
+    color: black;
+    background-color: #fec2c2;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+
+}
+
+.step{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
