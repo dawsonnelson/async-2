@@ -1,0 +1,124 @@
+.app{
+    background-color: #afd4c0
+}
+
+.container{
+    display: flex;
+    width: 50%;
+    height: 90vh;
+    background-color: #F5F9F8;
+    /* justify-content: center; */
+    /* text-align: center; */
+    margin-left: 25%;
+    
+}
+
+.anl{
+    width: 100px;
+    font-size: 25px;
+    margin-left: 20px;
+    font-weight: bold;
+    
+}
+
+.anl-div{
+    margin-top: 20px;
+    /* justify-content: center;
+    align-items: center; */
+    
+}
+
+.cancel{
+    width: 70px;
+    height: 30px;
+    margin-left: 400px;
+    color: black;
+    background-color: #fec2c2;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 3px;
+
+}
+
+.step{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.step-status{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 120px;
+    width: 66%;
+}
+
+
+.img-display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 66%;
+    height: 300px;
+    margin-top: 30px;
+    margin-left: 120px;
+    border: 3px solid #ab2a19;
+}
+
+.img{
+    width: auto;
+    max-width: 66%;
+    height: auto;
+    max-height: 300px;
+}
+
+.url-div{
+    margin-top: 25px;
+    margin-left: 140px;
+}
+
+.url{
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.url-input{
+    margin-left: 60px;
+    width: 81%;
+    height: 22px;
+    font-size: 15px;
+    border-color: #408055;
+    border-radius: 3px;
+}
+
+.steps-div{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-evenly */
+}
+
+.previous{
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    border-radius: 3px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 205px;
+}
+
+.next{
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    border-radius: 3px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* margin-left: 20px; */
+}
