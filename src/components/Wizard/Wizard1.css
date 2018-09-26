@@ -6,7 +6,7 @@
     display: flex;
     width: 50%;
     height: 90vh;
-    background-color: #f6f0f0;
+    background-color: #F5F9F8;
     /* justify-content: center; */
     /* text-align: center; */
     margin-left: 25%;
@@ -46,3 +46,66 @@
     font-size: 20px;
 }
 
+.step-status{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 120px;
+    width: 66%;
+}
+
+.name-div{
+    margin-top: 40px;
+    margin-left: 140px;
+}
+
+.name{
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.name-input{
+    margin-left: 60px;
+    width: 81%;
+    height: 22px;
+    font-size: 15px;
+    border-color: #408055;
+}
+
+.description-div{
+    margin-top: 30px;
+    margin-left: 140px;
+}
+
+.description{
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.description-input{
+    margin-left: 60px;
+    width: 81%;
+    height: 88px;
+    font-size: 15px;
+    border-color: #408055;
+}
+
+.next-div{
+    text-align: center;
+    margin-top: 45px;
+}
+
+.next{
+    width: auto;
+    height: 20px;
+    color: white;
+    background-color: black;
+    font-size: 18px;
+    border-radius: 3px;
+    padding: 12px;
+    /* font-weight: bold; */
+}
+
+a{
+    
+}
