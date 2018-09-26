@@ -30,7 +30,7 @@ export default class Wizard1 extends Component {
                         <span className = 'name'>Property Name</span>
                     </div>
                     <div className = 'name-input'>
-                    <input className = 'name-input'></input>
+                        <input className = 'name-input'></input>
                     </div>
                     <div className = 'description-div'>
                         <span className = 'description'>Property Description</span>

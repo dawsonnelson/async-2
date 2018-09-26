@@ -54,45 +54,112 @@
     width: 66%;
 }
 
-.name-div{
+.address-div{
     margin-top: 40px;
     margin-left: 140px;
 }
 
-.name{
+.address{
     font-size: 21px;
     font-weight: bold;
 }
 
-.name-input{
+.address-input{
     margin-left: 60px;
     width: 81%;
     height: 22px;
     font-size: 15px;
     border-color: #408055;
+    border-radius: 3px;
 }
 
-.description-div{
-    margin-top: 30px;
-    margin-left: 140px;
+.cityStateZip-div{
+    margin-top: 29px;
+    margin-left: 20px;
+    /* display: inline-flex; */
+    
 }
 
-.description{
+.name-container{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 115px;
+    
+}
+
+.city{
     font-size: 21px;
     font-weight: bold;
 }
 
-.description-input{
+.city-input{
     margin-left: 60px;
-    width: 81%;
-    height: 88px;
+    width: 175px;
+    height: 22px;
     font-size: 15px;
     border-color: #408055;
+    border-radius: 3px;
 }
 
-.next-div{
-    text-align: center;
-    margin-top: 70px;
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 40px;
+}
+
+.state{
+    font-size: 21px;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.state-input{
+    margin-right: 70px;
+    width: 175px;
+    height: 22px;
+    font-size: 15px;
+    border-color: #408055;
+    border-radius: 3px;
+}
+
+.zip-div{
+    margin-top: 25px;
+    margin-left: 116px;
+}
+
+.zip{
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.zip-input{
+    margin-left: 50px;
+    width: 175px;
+    height: 22px;
+    font-size: 15px;
+    border-color: #408055;
+    border-radius: 3px;
+}
+
+.steps-div{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-evenly */
+}
+
+.previous{
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    border-radius: 3px;
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 205px;
 }
 
 .next{
@@ -104,6 +171,5 @@
     padding-right: 28px;
     padding-top: 10px;
     padding-bottom: 10px;
-    /* font-weight: bold; */
+    /* margin-left: 20px; */
 }
-
