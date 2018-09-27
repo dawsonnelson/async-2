@@ -5,47 +5,51 @@ import './Wizard2.css'
 import Active from '../../assets/step_active.png'
 import Inactive from '../../assets/step_inactive.png'
 import Completed from '../../assets/step_completed.png'
+import {updateAddressInput} from '../../ducks/reducer'
+import {updateCityInput} from '../../ducks/reducer'
+import {updateStateInput} from '../../ducks/reducer'
+import {updateZipInput} from '../../ducks/reducer'
 
 export default class Wizard2 extends Component {
-    constructor(props){
-        super(props);
+    // constructor(props){
+    //     super(props);
 
-        this.state = {
-            addressInput: null,
-            cityInput: null,
-            stateInput: null,
-            zipInput: null,
-        }
-    }
+    //     this.state = {
+    //         addressInput: null,
+    //         cityInput: null,
+    //         stateInput: null,
+    //         zipInput: null,
+    //     }
+    // }
 
-    handleAddressInput(amount){
-        this.setState({
-            addressInput: amount
-        })
-    }
+    // handleAddressInput(amount){
+    //     this.setState({
+    //         addressInput: amount
+    //     })
+    // }
 
-    handleCityInput(amount){
-        this.setState({
-            cityInput: amount
-        })
-    }
+    // handleCityInput(amount){
+    //     this.setState({
+    //         cityInput: amount
+    //     })
+    // }
 
-    handleStateInput(amount){
-        this.setState({
-            stateInput: amount
-        })
-    }
+    // handleStateInput(amount){
+    //     this.setState({
+    //         stateInput: amount
+    //     })
+    // }
 
-    handeZipInput(amount){
-        this.setState({
-            zipInput: amount
-        })
-    }
+    // handeZipInput(amount){
+    //     this.setState({
+    //         zipInput: amount
+    //     })
+    // }
     render(){
         return(
             <div className = 'app'>
                 <div className = 'nav'>
-                    <Nav url = '/wizard/2'/>
+                    <Nav/>
                 </div>
                 <div className = 'container'>
                     <div className = 'anl-div'>
@@ -62,7 +66,7 @@ export default class Wizard2 extends Component {
                         <span className = 'address'>Address</span>
                     </div>
                     <div className ='address-input'>
-                        <input className = 'address-input' onChange = {(e) => this.handleAddressInput(e.target.value)}></input>
+                        <input className = 'address-input' onChange = {updateAddressInput}></input>
                     </div>
                     <div className = 'cityStateZip-div'>
                         <div className = 'name-container'>
@@ -70,14 +74,14 @@ export default class Wizard2 extends Component {
                             <span className = 'state'>State</span>
                         </div>
                         <div className = 'input-container'>
-                            <input className = 'city-input' onChange = {(e) => this.handleCityInput(e.target.value)}></input>
-                            <input className = 'state-input' onChange = {(e) => this.handleStateInput(e.target.value)}></input>
+                            <input className = 'city-input' onChange = {updateCityInput}></input>
+                            <input className = 'state-input' onChange = {updateStateInput}></input>
                         </div>
                         <div className = 'zip-div'>
                             <span className = 'zip'>Zip</span>
                         </div>
                         <div className = 'zip-input'>
-                            <input className = 'zip-input' onChange = {(e) => this.handeZipInput(e.target.value)}></input>
+                            <input className = 'zip-input' onChange = {updateZipInput}></input>
                         </div>
                     </div>
                     <div className = 'steps-div'>

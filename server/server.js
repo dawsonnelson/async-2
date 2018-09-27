@@ -11,7 +11,8 @@ massive(CONNECTION_STRING).then(db => {
     app.set('db', db);
 })
 
-
+app.use(express.static(__dirname+'../build'))
+app.use(bodyParser.json())
 
 
 app.listen(process.env.SERVER_PORT, () =>{

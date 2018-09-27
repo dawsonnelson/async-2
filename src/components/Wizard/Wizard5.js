@@ -4,27 +4,28 @@ import { Link } from 'react-router-dom'
 import './Wizard5.css'
 import Active from '../../assets/step_active.png'
 import Completed from '../../assets/step_completed.png'
+import {updateRentInput} from '../../ducks/reducer'
 
 export default class Wizard5 extends Component {
-    constructor(props){
-        super(props);
+    // constructor(props){
+    //     super(props);
 
-        this.state = {
-            rentInput: null,
-        }
-    }
+    //     this.state = {
+    //         rentInput: null,
+    //     }
+    // }
 
-    handleRentInput(amount){
-        this.setState({
-            rentInput: amount
-        })
-    }
+    // handleRentInput(amount){
+    //     this.setState({
+    //         rentInput: amount
+    //     })
+    // }
 
     render(){
         return(
             <div className = 'app'>
                 <div className = 'nav'>
-                    <Nav url = '/wizard/5'/>
+                    <Nav/>
                 </div>
                 <div className = 'container'>
                     <div className = 'anl-div'>
@@ -44,7 +45,7 @@ export default class Wizard5 extends Component {
                         <span className = 'rent'>Desired Rent</span>
                     </div>
                     <div className = 'rent-input'>
-                        <input className = 'rent-input' onChange = {(e) => this.handleRentInput(e.target.value)}></input>
+                        <input className = 'rent-input' onChange = {updateRentInput}></input>
                     </div>
                     <div className = 'steps-div'>
                         <Link to ='/wizard/4' className = 'previous'>Previous Step</Link>

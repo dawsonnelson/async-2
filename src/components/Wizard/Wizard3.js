@@ -6,27 +6,28 @@ import Active from '../../assets/step_active.png'
 import Inactive from '../../assets/step_inactive.png'
 import Completed from '../../assets/step_completed.png'
 import image from '../../assets/colors.png'
+import {updateUrlInput} from '../../ducks/reducer'
 
 export default class Wizard3 extends Component {
-    constructor(props){
-        super(props);
+    // constructor(props){
+    //     super(props);
         
-        this.setState = {
-            urlInput: null,
-        }
-    }
+    //     this.setState = {
+    //         urlInput: null,
+    //     }
+    // }
 
-    handleUrlInput(amount){
-        this.setState({
-            urlInput: amount
-        })
-    }
+    // handleUrlInput(amount){
+    //     this.setState({
+    //         urlInput: amount
+    //     })
+    // }
 
     render(){
         return(
             <div className = 'app'>
                 <div className = 'nav'>
-                    <Nav url = '/wizard/3'/>
+                    <Nav/>
                 </div>
                 <div className = 'container'>
                     <div className = 'anl-div'>
@@ -46,7 +47,7 @@ export default class Wizard3 extends Component {
                         <span className = 'address'>Image URL</span>
                     </div>
                     <div className = 'url-input'>
-                        <input className = 'url-input' onChange = {(e) => this.handleUrlInput(e.target.value)}></input>
+                        <input className = 'url-input' onChange = {updateUrlInput}></input>
                     </div>
                     <div className = 'steps-div'>
                         <Link to ='/wizard/2' className = 'previous'>Previous Step</Link>

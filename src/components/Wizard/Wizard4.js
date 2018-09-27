@@ -5,39 +5,41 @@ import './Wizard4.css'
 import Active from '../../assets/step_active.png'
 import Inactive from '../../assets/step_inactive.png'
 import Completed from '../../assets/step_completed.png'
+import {updateLoanInput} from '../../ducks/reducer'
+import {updateMortgageInput} from '../../ducks/reducer'
 
 export default class Wizard4 extends Component {
-    constructor(props){
-        super(props);
+    // constructor(props){
+    //     super(props);
 
-        this.state = {
-            loanInput: null,
-            mortgageInput: null,
-        }
-    }
+    //     this.state = {
+    //         loanInput: null,
+    //         mortgageInput: null,
+    //     }
+    // }
 
-    handleLoanInput(amount){
-        console.log(this.state.loanInput)
+    // handleLoanInput(amount){
+    //     console.log(this.state.loanInput)
 
-        this.setState({
-            loanInput: amount
-        })
+    //     this.setState({
+    //         loanInput: amount
+    //     })
             
-    }
+    // }
 
-    handleMortgageInput(amount){
-        console.log(this.state.mortgageInput)
+    // handleMortgageInput(amount){
+    //     console.log(this.state.mortgageInput)
 
-        this.setState({
-            mortgageInput: amount
-        })
-    }
+    //     this.setState({
+    //         mortgageInput: amount
+    //     })
+    // }
 
     render(){
         return(
             <div className = 'app'>
                 <div className = 'nav'>
-                    <Nav url = '/wizard/4'/>
+                    <Nav/>
                 </div>
                 <div className = 'container'>
                     <div className = 'anl-div'>
@@ -54,13 +56,13 @@ export default class Wizard4 extends Component {
                         <span className = 'loan'>Loan Amount</span>
                     </div>
                     <div className = 'loan-input'>
-                        <input className = 'loan-input' onChange = {(e) => this.handleLoanInput(e.target.value)}></input>
+                        <input className = 'loan-input' onChange = {updateLoanInput}></input>
                     </div>
                     <div className = 'morg-div'>
                         <span className = 'morg'>Monthly Mortgage</span>
                     </div>
                     <div className = 'morg-input'>
-                        <input className = 'morg-input' onChange = {(e) => this.handleMortgageInput(e.target.value)}></input>
+                        <input className = 'morg-input' onChange = {updateMortgageInput}></input>
                     </div>
                     <div className = 'steps-div'>
                         <Link to ='/wizard/3' className = 'previous'>Previous Step</Link>
