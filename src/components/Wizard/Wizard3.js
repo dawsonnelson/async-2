@@ -8,6 +8,19 @@ import Completed from '../../assets/step_completed.png'
 import image from '../../assets/colors.png'
 
 export default class Wizard3 extends Component {
+    constructor(props){
+        super(props);
+        
+        this.setState = {
+            urlInput: null,
+        }
+    }
+
+    handleUrlInput(amount){
+        this.setState({
+            urlInput: amount
+        })
+    }
 
     render(){
         return(
@@ -33,7 +46,7 @@ export default class Wizard3 extends Component {
                         <span className = 'address'>Image URL</span>
                     </div>
                     <div className = 'url-input'>
-                        <input className = 'url-input'></input>
+                        <input className = 'url-input' onChange = {(e) => this.handleUrlInput(e.target.value)}></input>
                     </div>
                     <div className = 'steps-div'>
                         <Link to ='/wizard/2' className = 'previous'>Previous Step</Link>

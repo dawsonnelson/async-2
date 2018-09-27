@@ -6,7 +6,26 @@ import Active from '../../assets/step_active.png'
 import Inactive from '../../assets/step_inactive.png'
 
 export default class Wizard1 extends Component {
+    constructor(props){
+        super(props);
 
+        this.state = {
+            propName: null,
+            propDesc: null,
+        }
+    }
+
+    handleNameInput(amount){
+        this.setState({
+            propName: amount
+        })
+    }
+
+    handleDescriptionInput(amount){
+        this.setState({
+            propDesc: amount
+        })
+    }
 
 
     render(){
@@ -30,16 +49,16 @@ export default class Wizard1 extends Component {
                         <span className = 'name'>Property Name</span>
                     </div>
                     <div className = 'name-input'>
-                        <input className = 'name-input'></input>
+                        <input className = 'name-input' onChange = {(e) => this.handleNameInput(e.target.value)}></input>
                     </div>
                     <div className = 'description-div'>
                         <span className = 'description'>Property Description</span>
                     </div>
                     <div className = 'description-input'>
-                        <textarea className = 'description-input'></textarea>
+                        {/* <textarea className = 'description-input' onChange = {(e) = this.handleDescriptionInput(e.target.value)}></textarea> */} 
                     </div>
                     <div className = 'next-div'>
-                        <Link to ='/wizard/2' className = 'next'>Next Step</Link>
+                        <Link to ='/wizard/2' className = 'next' >Next Step</Link>
                     </div>
                 </div>
             </div>

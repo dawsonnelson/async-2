@@ -11,6 +11,7 @@
     /* text-align: center; */
     margin-left: 25%;
     
+    
 }
 
 .anl{
@@ -54,36 +55,23 @@
     width: 66%;
 }
 
-.loan-div{
-    margin-top: 40px;
-    margin-left: 140px;
-}
-
-.loan{
-    font-size: 21px;
+.reco-div{
+    text-align: center;
+    margin-top: 35px;
     font-weight: bold;
 }
 
-.loan-input{
-    margin-left: 60px;
-    width: 81%;
-    height: 22px;
-    font-size: 15px;
-    border-color: #408055;
-    border-radius: 3px;
-}
-
-.morg-div{
+.rent-div{
     margin-top: 30px;
     margin-left: 140px;
 }
 
-.morg{
+.rent{
     font-size: 21px;
     font-weight: bold;
 }
 
-.morg-input{
+.rent-input{
     margin-left: 60px;
     width: 81%;
     height: 22px;
@@ -111,9 +99,9 @@
     margin-right: 205px;
 }
 
-.next{
-    color: white;
-    background-color: black;
+.complete{
+    color: black;
+    background-color: #8aea92;
     font-size: 15px;
     border-radius: 3px;
     padding-left: 28px;

@@ -7,8 +7,40 @@ import Inactive from '../../assets/step_inactive.png'
 import Completed from '../../assets/step_completed.png'
 
 export default class Wizard2 extends Component {
+    constructor(props){
+        super(props);
 
+        this.state = {
+            addressInput: null,
+            cityInput: null,
+            stateInput: null,
+            zipInput: null,
+        }
+    }
 
+    handleAddressInput(amount){
+        this.setState({
+            addressInput: amount
+        })
+    }
+
+    handleCityInput(amount){
+        this.setState({
+            cityInput: amount
+        })
+    }
+
+    handleStateInput(amount){
+        this.setState({
+            stateInput: amount
+        })
+    }
+
+    handeZipInput(amount){
+        this.setState({
+            zipInput: amount
+        })
+    }
     render(){
         return(
             <div className = 'app'>
@@ -30,7 +62,7 @@ export default class Wizard2 extends Component {
                         <span className = 'address'>Address</span>
                     </div>
                     <div className ='address-input'>
-                        <input className = 'address-input'></input>
+                        <input className = 'address-input' onChange = {(e) => this.handleAddressInput(e.target.value)}></input>
                     </div>
                     <div className = 'cityStateZip-div'>
                         <div className = 'name-container'>
@@ -38,14 +70,14 @@ export default class Wizard2 extends Component {
                             <span className = 'state'>State</span>
                         </div>
                         <div className = 'input-container'>
-                            <input className = 'city-input'></input>
-                            <input className = 'state-input'></input>
+                            <input className = 'city-input' onChange = {(e) => this.handleCityInput(e.target.value)}></input>
+                            <input className = 'state-input' onChange = {(e) => this.handleStateInput(e.target.value)}></input>
                         </div>
                         <div className = 'zip-div'>
                             <span className = 'zip'>Zip</span>
                         </div>
                         <div className = 'zip-input'>
-                            <input className = 'zip-input'></input>
+                            <input className = 'zip-input' onChange = {(e) => this.handeZipInput(e.target.value)}></input>
                         </div>
                     </div>
                     <div className = 'steps-div'>
