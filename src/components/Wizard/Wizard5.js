@@ -4,22 +4,47 @@ import { Link } from 'react-router-dom'
 import './Wizard5.css'
 import Active from '../../assets/step_active.png'
 import Completed from '../../assets/step_completed.png'
-import {updateRentInput} from '../../ducks/reducer'
+// import {updateRentInput} from '../../ducks/reducer'
+import axios from 'axios'
+
+
 
 export default class Wizard5 extends Component {
-    // constructor(props){
-    //     super(props);
+    constructor(props){
+        super(props);
 
-    //     this.state = {
-    //         rentInput: null,
-    //     }
-    // }
+        this.state = {
+            rentInput: null,
+        }
 
-    // handleRentInput(amount){
-    //     this.setState({
-    //         rentInput: amount
-    //     })
-    // }
+        this.handleCreate = this.handleCreate.bind(this)
+        // this.handleRentInput = this.handleRentInput.bind(this)
+    }
+
+    handleRentInput(amount){
+        // console.log(this.state)
+        this.setState({
+            rentInput: amount
+        })
+    }
+
+    handleCreate(){
+        // axios.post('/api/houser/create', {PropName: this.state.propName, PropDesc: this.state.propDesc, Address: this.state.addressInput, City: this.state.cityInput, State: this.state.stateInput, Zip: this.state.zipInput, Url: this.state.urlInput, Loan: this.state.loanInput, Mortgage: this.state.mortgageInput, Rent: this.state.rentInput })
+        let {propName, propDesc, addressInput, cityInput, stateInput, zipInput, urlInput, loanInput, mortgageInput, rentInput } = this.props
+
+        axios.post('/api/houser/create', {propName, propDesc, addressInput, cityInput, stateInput, zipInput, urlInput, loanInput, mortgageInput, rentInput })
+        .then(res=>{
+           this.props.history.push(`/dashboard`)
+        })
+        console.log(this.state)
+    }
+
+
+
+
+
+    // without reducer //
+
 
     render(){
         return(
@@ -30,13 +55,13 @@ export default class Wizard5 extends Component {
                 <div className = 'container'>
                     <div className = 'anl-div'>
                         <span className = 'anl'>Add new listing</span>
-                        <button className = 'cancel'>Cancel</button>
+                        <Link to  ="/dashboard"><button className = 'cancel'>Cancel</button></Link>
                     </div>
                     <div className = 'step'>
                         <span>Step 5</span>
                     </div>
                     <div className = 'step-status'>
-                        <img className = 'completed' src = {Completed}/> <img className = 'completed' src = {Completed}/> <img className = 'completed' src = {Completed}/> <img className = 'completed' src = {Completed}/> <img className = 'active' src = {Active}/>
+                        <img className = 'completed' src = {Completed} alt = ''/> <img className = 'completed' src = {Completed} alt = ''/> <img className = 'completed' src = {Completed} alt = ''/> <img className = 'completed' src = {Completed} alt = ''/> <img className = 'active' src = {Active} alt = ''/>
                     </div>
                     <div className = 'reco-div'>
                         <span className = 'reco'>Recommended Rent $filler</span>
@@ -45,14 +70,54 @@ export default class Wizard5 extends Component {
                         <span className = 'rent'>Desired Rent</span>
                     </div>
                     <div className = 'rent-input'>
-                        <input className = 'rent-input' onChange = {updateRentInput}></input>
+                        <input className = 'rent-input' onChange = {(e) => this.handleRentInput(e.target.value)}></input>
                     </div>
                     <div className = 'steps-div'>
                         <Link to ='/wizard/4' className = 'previous'>Previous Step</Link>
-                        <button className = 'complete'>Complete</button>
+                        <button className = 'complete' onClick = {this.handleCreate}>Complete</button>
                     </div>
                 </div>
             </div>
         )
     }
 }
+
+
+    // with reducer //
+
+
+//     render(){
+//         return(
+//             <div className = 'app'>
+//                 <div className = 'nav'>
+//                     <Nav/>
+//                 </div>
+//                 <div className = 'container'>
+//                     <div className = 'anl-div'>
+//                         <span className = 'anl'>Add new listing</span>
+//                         <Link to  ="/dashboard"><button className = 'cancel'>Cancel</button></Link>
+//                     </div>
+//                     <div className = 'step'>
+//                         <span>Step 5</span>
+//                     </div>
+//                     <div className = 'step-status'>
+//                         <img className = 'completed' src = {Completed}/> <img className = 'completed' src = {Completed}/> <img className = 'completed' src = {Completed}/> <img className = 'completed' src = {Completed}/> <img className = 'active' src = {Active}/>
+//                     </div>
+//                     <div className = 'reco-div'>
+//                         <span className = 'reco'>Recommended Rent $filler</span>
+//                     </div>
+//                     <div className = 'rent-div'>
+//                         <span className = 'rent'>Desired Rent</span>
+//                     </div>
+//                     <div className = 'rent-input'>
+//                         <input className = 'rent-input' onChange = {updateRentInput}></input>
+//                     </div>
+//                     <div className = 'steps-div'>
+//                         <Link to ='/wizard/4' className = 'previous'>Previous Step</Link>
+//                         <button className = 'complete'>Complete</button>
+//                     </div>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }

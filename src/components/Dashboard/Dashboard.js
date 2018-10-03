@@ -2,9 +2,46 @@ import React, { Component } from 'react'
 import Nav from '../Nav/Nav'
 import './Dashboard.css'
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 export default class Dashboard extends Component {
-    
+    constructor(props){
+        super(props)
+
+        this.state = {
+            propName: null,
+            propDesc: null,
+            addressInput: null,
+            cityInput: null,
+            stateInput: null,
+            zipInput: null,
+            urlInput: null,
+            loanInput: null,
+            mortgageInput: null,
+            rentInput: null
+        }
+    }
+
+
+    componentDidMount(){
+        axios.get(`/api/houser/getInfo`)
+        .then(res=>{
+            console.log(res.data)
+
+            this.setState({
+                propName: res.data.propName,
+                propDesc: res.data.propDesc,
+                addressInput: res.data.addressInput,
+                cityInput: res.data.cityInput,
+                stateInput: res.data.stateInput,
+                zipInput: res.data.zipInput,
+                urlInput: res.data.urlInput,
+                loanInput: res.data.loanInput,
+                mortgageInput: res.data.mortgageInput,
+                rentInput: res.data.rentInput
+            })
+        })
+    }
 
     render(){
         return(

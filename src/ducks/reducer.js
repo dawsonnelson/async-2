@@ -94,7 +94,7 @@ export function updatePropName( propName ){
 
 
   function reducer( state = initialState, action ) {
-    console.log('REDUCER HIT: Action ->', action );
+                                                                                                                                                                                                                                                // console.log('REDUCER HIT: Action ->', action );
 
     switch( action.type ){
         case UPDATE_PROPNAME:

@@ -1,3 +1,3 @@
 select * 
 from  properties 
-where users_id = $1
+-- where property_id = $1

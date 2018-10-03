@@ -7,7 +7,7 @@ export default function Nav (props){
     return(
         <div className = "nav">
             <div className = "nav-left">
-                <img className = "picture" src = {image}/> <span className = "houser">Houser</span> <span className = "dashboard">Dashboard</span>
+                <img className = "picture" src = {image} alt = ''/> <span className = "houser">Houser</span> <span className = "dashboard">Dashboard</span>
             </div>
 
             <div className = "nav-right">
