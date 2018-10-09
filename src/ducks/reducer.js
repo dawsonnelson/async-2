@@ -22,6 +22,44 @@ const UPDATE_LOANINPUT = 'UPDATE_LOANINPUT';
 const UPDATE_MORTGAGEINPUT = 'UPDATE_MORTGAGEINPUT';
 const UPDATE_RENTINPUT = 'UPDATE_RENTINPUT';
 
+function reducer( state = initialState, action ) {
+ console.log('REDUCER HIT: Action ->', action );
+
+  switch( action.type ){
+      case UPDATE_PROPNAME:
+          return Object.assign( {}, state, { propName: action.payload } );
+      
+      case UPDATE_PROPDESC:
+          return Object.assign( {}, state, { propDesc: action.payload } );
+
+      case UPDATE_ADDRESSINPUT:
+          return Object.assign( {}, state, { addressInput: action.payload } );
+
+      case UPDATE_CITYINPUT:
+          return Object.assign( {}, state, { cityInput: action.payload } );
+
+      case UPDATE_STATEINPUT:
+          return Object.assign( {}, state, { stateInput: action.payload } );
+                  
+      case UPDATE_ZIPINPUT:
+          return Object.assign( {}, state, { zipInput: action.payload } );
+
+      case UPDATE_URLINPUT:
+          return Object.assign( {}, state, { urlInput: action.payload } );
+
+      case UPDATE_LOANINPUT:
+          return Object.assign( {}, state, { loanInput: action.payload } );
+
+      case UPDATE_MORTGAGEINPUT:
+          return Object.assign( {}, state, { mortgageInput: action.payload } );  
+          
+      case UPDATE_RENTINPUT:
+          return Object.assign( {}, state, { rentInput: action.payload } );
+
+          default: return state
+  }
+}
+
 export function updatePropName( propName ){
     return {
       type: UPDATE_PROPNAME,
@@ -39,7 +77,7 @@ export function updatePropName( propName ){
   export function updateAddressInput( addressInput ){
       return{
           type: UPDATE_ADDRESSINPUT,
-          payoad: addressInput
+          payload: addressInput
       };
   }
 
@@ -93,40 +131,5 @@ export function updatePropName( propName ){
   }
 
 
-  function reducer( state = initialState, action ) {
-                                                                                                                                                                                                                                                // console.log('REDUCER HIT: Action ->', action );
-
-    switch( action.type ){
-        case UPDATE_PROPNAME:
-            return Object.assign( {}, state, { propName: action.payload } );
-        
-        case UPDATE_PROPDESC:
-            return Object.assign( {}, state, { propDesc: action.payload } );
-
-        case UPDATE_ADDRESSINPUT:
-            return Object.assign( {}, state, { updateAddressInput: action.payload } );
-
-        case UPDATE_CITYINPUT:
-            return Object.assign( {}, state, { updateCityInput: action.payload } );
-
-        case UPDATE_STATEINPUT:
-            return Object.assign( {}, state, { updateStateInput: action.payload } );
-                    
-        case UPDATE_ZIPINPUT:
-            return Object.assign( {}, state, { updateZipInput: action.payload } );
-
-        case UPDATE_URLINPUT:
-            return Object.assign( {}, state, { updateUrlInput: action.payload } );
-
-        case UPDATE_LOANINPUT:
-            return Object.assign( {}, state, { updateLoanInput: action.payload } );
-
-        case UPDATE_MORTGAGEINPUT:
-            return Object.assign( {}, state, { updateMortgageInput: action.payload } );  
-            
-        case UPDATE_RENTINPUT:
-            return Object.assign( {}, state, { updateRentInput: action.payload } );
-    }
-  }
 
 export default reducer;
