@@ -6,7 +6,7 @@ import Active from '../../assets/step_active.png'
 import Completed from '../../assets/step_completed.png'
 // import {updateRentInput} from '../../ducks/reducer'
 import { updatePropName, updatePropDesc, updateAddressInput, updateCityInput, updateStateInput,
-         updateZipInput, updateUrlInput, updateLoanInput, updateMortgageInput, updateRentInput} from '../../ducks/reducer'
+         updateZipInput, updateUrlInput, updateLoanInput, updateMortgageInput, updateRentInput, resetInput} from '../../ducks/reducer'
 import axios from 'axios'
 import { connect } from 'react-redux';
 
@@ -22,7 +22,11 @@ class Wizard5 extends Component {
 
         this.handleCreate = this.handleCreate.bind(this);
         this.handleRentInput = this.handleRentInput.bind(this);
-        // this.handleRentInput = this.handleRentInput.bind(this)
+        this.handleCancel = this.handleCancel.bind(this);
+    }
+
+    handleCancel(){
+        this.props.resetInput()
     }
 
     handleRentInput(e){
@@ -32,10 +36,11 @@ class Wizard5 extends Component {
     handleCreate(){
         // axios.post('/api/houser/create', {PropName: this.state.propName, PropDesc: this.state.propDesc, Address: this.state.addressInput, City: this.state.cityInput, State: this.state.stateInput, Zip: this.state.zipInput, Url: this.state.urlInput, Loan: this.state.loanInput, Mortgage: this.state.mortgageInput, Rent: this.state.rentInput })
         let {propName, propDesc, addressInput, cityInput, stateInput, zipInput, urlInput, loanInput, mortgageInput, rentInput } = this.props
-        console.log(this.props)
+        // console.log(this.props)
 
         axios.post('/api/houser/create', {propName, propDesc, addressInput, cityInput, stateInput, zipInput, urlInput, loanInput, mortgageInput, rentInput })
         .then(res=>{
+           this.props.resetInput()
            this.props.history.push(`/dashboard`)
         })
     }
@@ -98,7 +103,7 @@ class Wizard5 extends Component {
                 <div className = 'container'>
                     <div className = 'anl-div'>
                         <span className = 'anl'>Add new listing</span>
-                        <Link to  ="/dashboard"><button className = 'cancel'>Cancel</button></Link>
+                        <Link to  ="/dashboard"><button className = 'cancel' onClick={this.handleCancel}>Cancel</button></Link>
                     </div>
                     <div className = 'step'>
                         <span>Step 5</span>
@@ -172,7 +177,8 @@ export default connect(mapStateToProps, {
     updateUrlInput,
     updateLoanInput,
     updateMortgageInput,
-    updateRentInput
+    updateRentInput,
+    resetInput
 })(Wizard5);
 
 // export default connect(mapStateToProps, {})(Wizard5);

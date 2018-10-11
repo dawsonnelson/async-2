@@ -9,6 +9,7 @@ import {updateAddressInput} from '../../ducks/reducer'
 import {updateCityInput} from '../../ducks/reducer'
 import {updateStateInput} from '../../ducks/reducer'
 import {updateZipInput} from '../../ducks/reducer'
+import {resetInput} from '../../ducks/reducer'
 import { connect } from 'react-redux';
 
 class Wizard2 extends Component {
@@ -26,6 +27,11 @@ class Wizard2 extends Component {
         this.handleCityInput = this.handleCityInput.bind(this)
         this.handleStateInput = this.handleStateInput.bind(this)
         this.handleZipInput = this.handleZipInput.bind(this)
+        this.handleCancel = this.handleCancel.bind(this)
+    }
+
+    handleCancel(){
+        this.props.resetInput()
     }
 
     handleAddressInput(e){
@@ -118,7 +124,7 @@ class Wizard2 extends Component {
                 <div className = 'container'>
                     <div className = 'anl-div'>
                         <span className = 'anl'>Add new listing</span>
-                        <Link to  ="/dashboard"><button className = 'cancel'>Cancel</button></Link>
+                        <Link to  ="/dashboard"><button className = 'cancel' onClick={this.handleCancel}>Cancel</button></Link>
                     </div>
                     <div className = 'step'>
                         <span>Step 2</span>
@@ -167,4 +173,4 @@ function mapStateToProps(duckState) {
     }
 }
 
-export default connect(mapStateToProps, {updateAddressInput, updateCityInput, updateStateInput, updateZipInput}) (Wizard2);
+export default connect(mapStateToProps, {updateAddressInput, updateCityInput, updateStateInput, updateZipInput, resetInput}) (Wizard2);

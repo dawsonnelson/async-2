@@ -7,6 +7,7 @@ import Inactive from '../../assets/step_inactive.png'
 import Completed from '../../assets/step_completed.png'
 import image from '../../assets/colors.png'
 import {updateUrlInput} from '../../ducks/reducer'
+import {resetInput} from '../../ducks/reducer'
 import { connect } from 'react-redux';
 
 class Wizard3 extends Component {
@@ -18,6 +19,11 @@ class Wizard3 extends Component {
         }
 
         this.handleUrlInput = this.handleUrlInput.bind(this)
+        this.handleCancel = this.handleCancel.bind(this)
+    }
+
+    handleCancel(){
+        this.props.resetInput()
     }
 
     handleUrlInput(e){
@@ -83,7 +89,7 @@ class Wizard3 extends Component {
                 <div className = 'container'>
                     <div className = 'anl-div'>
                         <span className = 'anl'>Add new listing</span>
-                        <Link to  ="/dashboard"><button className = 'cancel'>Cancel</button></Link>
+                        <Link to  ="/dashboard"><button className = 'cancel' onClick={this.handleCancel}>Cancel</button></Link>
                     </div>
                     <div className = 'step'>
                         <span>Step 3</span>
@@ -116,7 +122,7 @@ function mapStateToProps(duckState) {
     }
 }
 
-export default connect(mapStateToProps, {updateUrlInput}) (Wizard3);
+export default connect(mapStateToProps, {updateUrlInput, resetInput}) (Wizard3);
 
 
 

@@ -21,6 +21,7 @@ const UPDATE_URLINPUT = 'UPDATE_URLINPUT '
 const UPDATE_LOANINPUT = 'UPDATE_LOANINPUT';
 const UPDATE_MORTGAGEINPUT = 'UPDATE_MORTGAGEINPUT';
 const UPDATE_RENTINPUT = 'UPDATE_RENTINPUT';
+const RESET_INPUT = 'RESET_INPUT';
 
 function reducer( state = initialState, action ) {
  console.log('REDUCER HIT: Action ->', action );
@@ -55,6 +56,9 @@ function reducer( state = initialState, action ) {
           
       case UPDATE_RENTINPUT:
           return Object.assign( {}, state, { rentInput: action.payload } );
+
+      case RESET_INPUT:
+          return initialState
 
           default: return state
   }
@@ -127,6 +131,12 @@ export function updatePropName( propName ){
       return{
           type: UPDATE_RENTINPUT,
           payload: rentInput
+      }
+  }
+
+  export function resetInput(){
+      return{
+          type: RESET_INPUT
       }
   }
 

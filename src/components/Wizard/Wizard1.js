@@ -6,6 +6,7 @@ import Active from '../../assets/step_active.png'
 import Inactive from '../../assets/step_inactive.png'
 import {updatePropName} from '../../ducks/reducer'
 import {updatePropDesc} from '../../ducks/reducer'
+import {resetInput} from '../../ducks/reducer'
 import { connect } from 'react-redux';
 
 class Wizard1 extends Component {
@@ -19,6 +20,11 @@ class Wizard1 extends Component {
 
         this.handleNameInput = this.handleNameInput.bind(this)
         this.handleDescriptionInput = this.handleDescriptionInput.bind(this)
+        this.handleCancel = this.handleCancel.bind(this)
+    }
+
+    handleCancel(){
+        this.props.resetInput()
     }
 
     handleNameInput(e){
@@ -96,7 +102,7 @@ class Wizard1 extends Component {
                 <div className = 'container'>
                     <div className = 'anl-div'>
                         <span className = 'anl'>Add new listing</span>
-                        <Link to  ="/dashboard"><button className = 'cancel'>Cancel</button></Link>
+                        <Link to  ="/dashboard"><button className = 'cancel' onClick={this.handleCancel}>Cancel</button></Link>
                     </div>
                     <div className = 'step'>
                         <span>Step 1</span>
@@ -131,4 +137,4 @@ function mapStateToProps(duckState) {
         propDesc: duckState.propDesc
     }
 }
-export default connect(mapStateToProps, { updatePropName, updatePropDesc })(Wizard1);
+export default connect(mapStateToProps, { updatePropName, updatePropDesc, resetInput})(Wizard1);

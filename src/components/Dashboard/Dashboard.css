@@ -1,13 +1,15 @@
 .app{
-    background-color: #afd4c0
+    background-color: #afd4c0;
+    overflow: scroll;
+    /* min-height: 90vh; */
+    /* max-height: 10000vh */
 }
 .container{
     display: flex;
-    width: 50%;
-    height: 90vh;
+    /* width: 50%; */
+    min-height: 90vh; 
+    /* max-height: 10000vh; */
     background-color: #f6f0f0;
-    /* justify-content: center; */
-    /* text-align: center; */
     margin-left: 25%;
     flex-direction: column;
     flex-wrap: wrap;
@@ -81,5 +83,48 @@
 }
 
 .listing-container{
-    
+    margin-left: 25px;
+    width: 670px;
+    min-height: 200px;
+    display: inline-block;
+    justify-content: space-around 5px;
 }
+
+.info{
+    /* height: 200px; */
+    margin-top: 10px;
+    display: flex;
+}
+
+.urlPic{
+    background: #c1bfbe;
+    width: 20%; 
+    min-height: 200px;
+    float: left;
+}
+
+.nameDesc{
+    background: #dddad9;
+    width: 39%;
+    min-height: 200px;
+    float: left;
+}
+
+.everyElse{
+    background: #dddad9;
+    width: 40%;
+    min-height: 200px;
+    float: left;
+    border-left: solid black 1px;
+    font-weight: bold
+}
+
+#ha, #hc, #hs, #hz, #hl, #hm, #hr, #pn, #pd, #hu{
+    float: left;
+    clear: left;
+}
+
+#pn{
+    font-weight: bold
+}
+

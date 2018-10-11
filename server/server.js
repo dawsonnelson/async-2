@@ -28,11 +28,19 @@ app.get(`/api/houser/getInfo`, (req,res)=>{
     const db = req.app.get('db')
     db.get_properties([req.body])
     .then(resp=>{
-        res.status(200).send(resp[0])
+        res.status(200).send(resp)
     })
     .catch(console.log)
 })
 
+app.delete(`/api/houser/delete`, (req, res) =>{
+    const db = req.app.get('db')
+    db.delete_property([req.query.id])
+    .then(resp=>{
+        res.status(200).send(resp)
+    })
+    .catch(console.log)
+})
 
 app.listen(process.env.SERVER_PORT, () =>{
     console.log(`listening on port ${process.env.SERVER_PORT}`)

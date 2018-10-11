@@ -7,6 +7,7 @@ import Inactive from '../../assets/step_inactive.png'
 import Completed from '../../assets/step_completed.png'
 import {updateLoanInput} from '../../ducks/reducer'
 import {updateMortgageInput} from '../../ducks/reducer'
+import {resetInput} from '../../ducks/reducer'
 import {connect} from 'react-redux'
 
 class Wizard4 extends Component {
@@ -19,6 +20,11 @@ class Wizard4 extends Component {
         }
         this.handleLoanInput = this.handleLoanInput.bind(this)
         this.handleMortgageInput = this.handleMortgageInput.bind(this)
+        this.handleCancel = this.handleCancel.bind(this)
+    }
+
+    handleCancel(){
+        this.props.resetInput()
     }
 
     handleLoanInput(e){
@@ -87,7 +93,7 @@ class Wizard4 extends Component {
                 <div className = 'container'>
                     <div className = 'anl-div'>
                         <span className = 'anl'>Add new listing</span>
-                        <Link to  ="/dashboard"><button className = 'cancel'>Cancel</button></Link>
+                        <Link to  ="/dashboard"><button className = 'cancel' onClick={this.handleCancel}>Cancel</button></Link>
                     </div>
                     <div className = 'step'>
                         <span>Step 4</span>
@@ -124,4 +130,4 @@ function mapStateToProps(duckState) {
     }
 }
 
-export default connect(mapStateToProps, {updateLoanInput, updateMortgageInput})(Wizard4);
+export default connect(mapStateToProps, {updateLoanInput, updateMortgageInput, resetInput})(Wizard4);
