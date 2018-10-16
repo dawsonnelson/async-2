@@ -12,7 +12,7 @@ urlInput text,
 loanInput int,
 mortgageInput int,
 rentInput int
--- users_id int references users(id)
+users_id int references users(id)
 );
 
 create table users (

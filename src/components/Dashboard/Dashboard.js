@@ -46,12 +46,18 @@ export default class Dashboard extends Component {
 
             })
         })
+        // .then(this.reload)
     }
 
     handleDelete(id){
-        console.log(this.state.houses[0])
+        console.log(this.state.houses[id])
 
-        axios.delete(`/api/houser/delete?id=${}`)
+        axios.delete(`/api/houser/delete/${id}`)
+        .then((res) => {
+            this.setState({
+                houses: res.data
+            })
+        })
         .then(this.reload)
     }
 
@@ -61,11 +67,11 @@ export default class Dashboard extends Component {
     // }
 
     renderHouses(){
-        return this.state.houses.map((house) => {
+        return this.state.houses.map((house, id) => {
+            // id=house.property_id
             return(
             <div className = 'info'>
-                <div className = 'urlPic'>
-                    <img id = 'hu' src = {house.urlinput}></img>
+                <div className = 'urlPic'><img id = 'hu' src = {house.urlinput}></img>
                 </div>
 
                 <div className = 'nameDesc'>
@@ -74,7 +80,7 @@ export default class Dashboard extends Component {
                 </div>
                 
                 <div className = 'everyElse'>
-                    <span id = 'hl'>Loan: ${house.loaninput}</span> <button onClick ={() => this.handleDelete(house.property_id)} />
+                    <span id = 'hl'>Loan: ${house.loaninput}</span> <button className = 'deleteSym' onClick ={() => this.handleDelete(house.property_id)}>X</button>
                     <span id = 'hm'>Monthly Mortgage: ${house.mortgageInput}</span>
                     <span id = 'hr'>{house.rentinput}</span>
                     <span id = 'hs'>State: {house.stateinput}</span>

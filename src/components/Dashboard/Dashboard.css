@@ -6,13 +6,14 @@
 }
 .container{
     display: flex;
+    overflow: scroll;
     /* width: 50%; */
     min-height: 90vh; 
     /* max-height: 10000vh; */
     background-color: #f6f0f0;
     margin-left: 25%;
     flex-direction: column;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     
 }
 
@@ -86,8 +87,8 @@
     margin-left: 25px;
     width: 670px;
     min-height: 200px;
-    display: inline-block;
-    justify-content: space-around 5px;
+    /* display: inline-block; */
+    /* justify-content: space-around 5px; */
 }
 
 .info{
@@ -98,22 +99,35 @@
 
 .urlPic{
     background: #c1bfbe;
-    width: 20%; 
-    min-height: 200px;
-    float: left;
+    /* width: 25%;   */
+    width: 168px;
+    min-height: 150px; 
+     float: left;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+#hu {
+    width: 168px;
+    /* min-width: 500px; */
+    /* max-width: 500px; */
+    /* min-height: 400px; */
+    height: 150px;
+    /* max-height: 800px; */
 }
 
 .nameDesc{
     background: #dddad9;
-    width: 39%;
-    min-height: 200px;
+    width: 34%;
+    min-height: 150px;
     float: left;
 }
 
 .everyElse{
     background: #dddad9;
     width: 40%;
-    min-height: 200px;
+    min-height: 150px;
     float: left;
     border-left: solid black 1px;
     font-weight: bold
@@ -128,3 +142,9 @@
     font-weight: bold
 }
 
+.deleteSym{
+    float: right;
+    background: #dddad9;
+    height: 15px;
+    font: bold;
+}
