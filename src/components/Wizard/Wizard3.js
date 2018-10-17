@@ -5,7 +5,7 @@ import './Wizard3.css'
 import Active from '../../assets/step_active.png'
 import Inactive from '../../assets/step_inactive.png'
 import Completed from '../../assets/step_completed.png'
-import image from '../../assets/colors.png'
+// import image from '../../assets/colors.png'
 import {updateUrlInput} from '../../ducks/reducer'
 import {resetInput} from '../../ducks/reducer'
 import { connect } from 'react-redux';
@@ -29,6 +29,7 @@ class Wizard3 extends Component {
     handleUrlInput(e){
         this.props.updateUrlInput(e.target.value)
     }
+
 
 
 
@@ -98,7 +99,7 @@ class Wizard3 extends Component {
                     <img className = 'completed' src = {Completed} alt = ''/> <img className = 'completed' src = {Completed} alt = ''/> <img className = 'active' src = {Active} alt = ''/> <img className = 'inactive' src = {Inactive} alt = ''/> <img className = 'inactive' src = {Inactive} alt = ''/>
                     </div>
                     <div className = 'img-display'>
-                        <img className = 'img' src={image} alt=''></img>
+                        <img className = 'img' src={this.props.urlInput} alt=''></img>
                     </div>
                     <div className = 'url-div'>
                         <span className = 'address'>Image URL</span>

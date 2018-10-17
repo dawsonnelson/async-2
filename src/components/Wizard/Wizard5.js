@@ -95,6 +95,7 @@ class Wizard5 extends Component {
     render(){
         // const {updatePropName, updatePropDesc, updateAddressInput, updateCityInput, updateStateInput, updateZipInput, updateUrlInput, updateLoanInput, updateMortgageInput, updateRentInput} = this.props;
         console.log(this.props)
+        const recommended = this.props.mortgageInput * 1.25
         return(
             <div className = 'app'>
                 <div className = 'nav'>
@@ -112,7 +113,7 @@ class Wizard5 extends Component {
                     <img className = 'completed' src = {Completed} alt = ''/> <img className = 'completed' src = {Completed} alt = ''/> <img className = 'completed' src = {Completed} alt = ''/> <img className = 'completed' src = {Completed} alt = ''/> <img className = 'active' src = {Active} alt = ''/>
                     </div>
                     <div className = 'reco-div'>
-                        <span className = 'reco'>Recommended Rent $filler</span>
+                        <span className = 'reco'>Recommended Rent ${recommended}</span>
                     </div>
                     <div className = 'rent-div'>
                         <span className = 'rent'>Desired Rent</span>

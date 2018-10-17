@@ -22,7 +22,10 @@ export default class Dashboard extends Component {
             houses: []
         }
 
-        this.handleDelete = this.handleDelete.bind(this)
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleFilter = this.handleFilter.bind(this);
+        this.handlePriceChange = this.handlePriceChange.bind(this);
+        this.handleReset = this.handleReset.bind(this);
     }
 
 
@@ -42,7 +45,9 @@ export default class Dashboard extends Component {
                 // loanInput: res.data.loanInput,
                 // mortgageInput: res.data.mortgageInput,
                 // rentInput: res.data.rentInput
-                houses: res.data
+                houses: res.data,
+                price: 0,
+                newPrice: 0
 
             })
         })
@@ -58,19 +63,36 @@ export default class Dashboard extends Component {
                 houses: res.data
             })
         })
-        .then(this.reload)
+        // .then(this.reload)
     }
 
-    // reload(){
-    //     console.log("Clicked");
-    //     window.location.reload();
-    // }
+    handleFilter(e){
+        console.log(this.state.price)
+        this.setState({
+            price: this.state.newPrice
+        })
+    }
+
+    handlePriceChange(e){
+        // console.log(this.state.newPrice)
+        this.setState({
+            newPrice: e.target.value
+        })
+    }
+
+    handleReset(){
+        this.setState({
+            price: 0
+        })
+    }
+
+
 
     renderHouses(){
-        return this.state.houses.map((house, id) => {
-            // id=house.property_id
+        // return this.state.houses.filter(prop => prop.rentinput > 2) ;
+        return this.state.houses.filter(property => property.rentinput > this.state.price).map((house, id) => {
             return(
-            <div className = 'info'>
+            <div key={id} className = 'info'>
                 <div className = 'urlPic'><img id = 'hu' src = {house.urlinput}></img>
                 </div>
 
@@ -82,7 +104,7 @@ export default class Dashboard extends Component {
                 <div className = 'everyElse'>
                     <span id = 'hl'>Loan: ${house.loaninput}</span> <button className = 'deleteSym' onClick ={() => this.handleDelete(house.property_id)}>X</button>
                     <span id = 'hm'>Monthly Mortgage: ${house.mortgageInput}</span>
-                    <span id = 'hr'>{house.rentinput}</span>
+                    <span id = 'hr'>Desired Rent ${house.rentinput}</span>
                     <span id = 'hs'>State: {house.stateinput}</span>
                     <span id = 'ha'>Address: {house.addressinput}</span>
                     <span id = 'hc'>City: {house.cityinput}</span>
@@ -109,7 +131,7 @@ export default class Dashboard extends Component {
                         <Link to ='/wizard/1' className = 'add-new'>Add new property</Link>
                     </div>
                     <div className = 'filter-div'>
-                        <span>List properties with "desired rent" greater than: $</span> <input placeholder ='0' className = 'input-box'></input> <button className = 'filter'>Filter</button> <button className = 'reset'>Reset</button>
+                        <span>List properties with "desired rent" greater than: $</span> <input placeholder ='0' className = 'input-box' onChange = {this.handlePriceChange}></input> <button className = 'filter' onClick = {this.handleFilter} >Filter</button> <button className = 'reset' onClick = {this.handleReset}>Reset</button>
                     </div>
                     <div className = 'line'>
 

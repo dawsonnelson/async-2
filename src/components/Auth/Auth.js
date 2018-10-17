@@ -16,6 +16,7 @@ export default class Auth extends Component {
         this.handleUsernameInput = this.handleUsernameInput.bind(this);
         this.handlePasswordInput = this.handlePasswordInput.bind(this);
         this.handleRegister = this.handleRegister.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
     }
 
 
@@ -43,7 +44,9 @@ export default class Auth extends Component {
                 password: res.data
             })
             this.props.history.push('/dashboard')
-        })
+            console.log('it worked')
+
+        }).catch((err) => { console.log(err)})
     }
 
     handleLogin(){
@@ -78,7 +81,7 @@ export default class Auth extends Component {
                         <input className = 'password-input' onChange = {this.handlePasswordInput}></input>
                     </div>
                     <div className = 'steps-div'>
-                        <button className = 'login'>Login</button>
+                        <button className = 'login' onClick = {this.handleLogin}>Login</button>
                         <button className = 'register' onClick = {this.handleRegister}>Register</button>
                     </div>
                 </div>

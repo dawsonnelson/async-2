@@ -11,7 +11,7 @@ zipInput int,
 urlInput text,
 loanInput int,
 mortgageInput int,
-rentInput int
+rentInput int,
 users_id int references users(id)
 );
 
