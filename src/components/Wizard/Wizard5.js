@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import './Wizard5.css'
 import Active from '../../assets/step_active.png'
 import Completed from '../../assets/step_completed.png'
-// import {updateRentInput} from '../../ducks/reducer'
 import { updatePropName, updatePropDesc, updateAddressInput, updateCityInput, updateStateInput,
          updateZipInput, updateUrlInput, updateLoanInput, updateMortgageInput, updateRentInput, resetInput} from '../../ducks/reducer'
 import axios from 'axios'
